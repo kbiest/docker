@@ -58,9 +58,9 @@ OpenSSL note:
 PS> openssl req -x509 -newkey rsa:4096 -days 10950 -nodes -subj "/C=US/O=YourOrg/CN=YourFqdn" -keyout key.pem -out cert.pem -config .\openssl.cfg
 PS> openssl pkcs12 -name "TempWorks Login Signing" -export -in cert.pem -inkey key.pem -out auth-signing.pfx -password pass:YourPassword
 ```
-Place pfx file in your `auth` `%config_root%\certs` folder.
+Place pfx file in your `login-server` `%config_root%\certs` folder.
 
-Update `auth` appsettings.json `SigningCertificateFilename` and `SigningCertificatePassword` keys to their proper values
+Update `login-server` appsettings.json `SigningCertificateFilename` and `SigningCertificatePassword` keys to their proper values
 
 ## Create certificates for External Services credential store
 ```
